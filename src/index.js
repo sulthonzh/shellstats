@@ -91,7 +91,6 @@ function extractBaseCommand(entry) {
   cmd = cmd.split(/\s*[<>]\s*/)[0].trim();
   // Handle subshells
   if (cmd.startsWith('(')) cmd = cmd.slice(1);
-  // Extract the binary/command name
   const parts = cmd.split(/\s+/);
   let base = parts[0] || '';
   // Handle sudo, doas, nice, etc.
@@ -248,7 +247,6 @@ function formatText(result) {
   lines.push(`Source: ${result.path}`);
   lines.push('');
 
-  // Top commands
   lines.push('Top Commands:');
   const maxCmd = Math.max(...result.frequency.map(c => c.command.length));
   const maxCount = Math.max(...result.frequency.map(c => String(c.count).length));
@@ -258,7 +256,6 @@ function formatText(result) {
   }
   lines.push('');
 
-  // Sequences
   if (result.sequences.length > 0) {
     lines.push('Command Sequences:');
     for (const { sequence, count } of result.sequences) {
@@ -267,7 +264,6 @@ function formatText(result) {
     lines.push('');
   }
 
-  // Time patterns
   if (result.timePatterns) {
     const tp = result.timePatterns;
     lines.push(`Time Patterns (from ${tp.totalWithTimestamps} entries with timestamps):`);
@@ -282,14 +278,12 @@ function formatText(result) {
     lines.push('');
   }
 
-  // Lengths
   if (result.lengths) {
     const l = result.lengths;
     lines.push(`Command Lengths: avg ${l.avg} chars, median ${l.median}, p95 ${l.p95}, range ${l.min}-${l.max}`);
     lines.push('');
   }
 
-  // Duplicates
   const d = result.duplicates;
   lines.push(`Unique Commands: ${d.unique}/${d.total} (${d.uniquePct}% unique)`);
 

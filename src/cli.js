@@ -2,8 +2,6 @@
 'use strict';
 
 const { analyze, formatText, formatJSON, formatMarkdown } = require('./index');
-const fs = require('fs');
-const path = require('path');
 
 const args = process.argv.slice(2);
 
@@ -60,11 +58,6 @@ for (let i = 0; i < args.length; i++) {
 }
 
 const result = analyze(filePath, { shell, top });
-
-// If specific sections requested, filter
-if (!showSequences && !showTimes && !showLengths) {
-  // Show everything by default
-}
 
 switch (format) {
   case 'json': console.log(formatJSON(result)); break;
