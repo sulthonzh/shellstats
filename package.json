@@ -1,18 +1,27 @@
 {
   "name": "shellstats",
   "version": "1.0.0",
-  "description": "Analyze your shell history — most used commands, time patterns, command sequences, and habits you didn't know you had",
+  "description": "Shell system statistics monitoring tool",
   "main": "src/index.js",
   "bin": {
-    "shellstats": "./src/cli.js"
+    "shellstats": "src/cli.js"
   },
   "scripts": {
-    "test": "node test/run.js"
+    "test": "jest",
+    "build": "echo 'No build step required for pure JS'"
   },
-  "keywords": ["shell", "history", "analytics", "zsh", "bash", "cli"],
-  "author": "sulthonzh",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "shell",
+    "system",
+    "monitoring",
+    "statistics",
+    "cli"
+  ],
+  "author": "Sulthonzh",
   "license": "MIT",
-  "engines": {
-    "node": ">=16"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
