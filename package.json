@@ -1,5 +1,5 @@
 {
-  "name": "shellstats",
+  "name": "@quadbyte/shellstats",
   "version": "1.0.0",
   "description": "Shell system statistics monitoring tool",
   "main": "src/index.js",
@@ -23,5 +23,8 @@
   "author": "Sulthonzh",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }
