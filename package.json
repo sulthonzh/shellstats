@@ -1,13 +1,13 @@
 {
   "name": "@quadbyte/shellstats",
   "version": "1.0.0",
-  "description": "Shell system statistics monitoring tool",
+  "description": "Analyze your shell history — most used commands, time patterns, command sequences, and habits you did not know you had",
   "main": "src/index.js",
   "bin": {
     "shellstats": "src/cli.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "node test/run.js",
     "build": "echo 'No build step required for pure JS'"
   },
   "files": [
@@ -15,10 +15,13 @@
   ],
   "keywords": [
     "shell",
-    "system",
-    "monitoring",
-    "statistics",
-    "cli"
+    "history",
+    "analytics",
+    "zsh",
+    "bash",
+    "fish",
+    "cli",
+    "statistics"
   ],
   "author": "Sulthonzh",
   "license": "MIT",
@@ -26,5 +29,16 @@
   "devDependencies": {},
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulthonzh/shellstats.git"
+  },
+  "homepage": "https://github.com/sulthonzh/shellstats#readme",
+  "bugs": {
+    "url": "https://github.com/sulthonzh/shellstats/issues"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
